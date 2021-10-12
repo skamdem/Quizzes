@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -18,55 +19,37 @@ public class Quiz {
 
     public static void main(String[] args){
         quizQuestions = new ArrayList<>();
-        TrueFalseQuestion tf1 = new TrueFalseQuestion("Georges Washington was the US first president", true);
-        TrueFalseQuestion tf2 = new TrueFalseQuestion("One plus one equals two", true);
-        TrueFalseQuestion tf3 = new TrueFalseQuestion("A minute has 50 seconds", false);
+        Question tf1 = new TrueFalseQuestion("Georges Washington was the US first president", true);
+        Question tf2 = new TrueFalseQuestion("One plus one equals two", true);
+        Question tf3 = new TrueFalseQuestion("A minute has 50 seconds", false);
 
-        tempList.add("22");
-        tempList.add("24");
-        tempList.add("20");
-        MultipleChoiceQuestion mc1 = new MultipleChoiceQuestion("Number of hours in a day?", tempList,"24");
+        tempList.addAll(Arrays.asList("22", "24", "20"));
+        Question mc1 = new MultipleChoiceQuestion("Number of hours in a day?", tempList,"24");
         tempList.clear();
 
-        tempList.add("blue");
-        tempList.add("green");
-        tempList.add("no color");
-        MultipleChoiceQuestion mc2 = new MultipleChoiceQuestion("Natural color of water?", tempList,"no color");
+        tempList.addAll(Arrays.asList("blue", "green", "no color"));
+        Question mc2 = new MultipleChoiceQuestion("Natural color of water?", tempList,"no color");
         tempList.clear();
 
-        tempList.add("four");
-        tempList.add("seven");
-        tempList.add("6");
-        MultipleChoiceQuestion mc3 = new MultipleChoiceQuestion("Number of days in a week?", tempList,"seven");
+        tempList.addAll(Arrays.asList("four", "seven", "6"));
+        Question mc3 = new MultipleChoiceQuestion("Number of days in a week?", tempList,"seven");
         tempList.clear();
 
-        tempList.add("60");
-        tempList.add("51");
-        tempList.add("50");
-        tempList.add("fifty");
-        tempListAnswer.add("fifty");
-        tempListAnswer.add("50");
-        CheckboxQuestion cq1 = new CheckboxQuestion("Number of states in the US?", tempList, tempListAnswer);
+        tempList.addAll(Arrays.asList("60", "51", "50","fifty"));
+        tempListAnswer.addAll(Arrays.asList("fifty", "50"));
+        Question cq1 = new CheckboxQuestion("Number of states in the US?", tempList, tempListAnswer);
         tempList.clear();
         tempListAnswer.clear();
 
-        tempList.add("cyan");
-        tempList.add("water");
-        tempList.add("muddy");
-        tempList.add("red");
-        tempListAnswer.add("cyan");
-        tempListAnswer.add("red");
-        CheckboxQuestion cq2 = new CheckboxQuestion("Select colors among the list?", tempList, tempListAnswer);
+        tempList.addAll(Arrays.asList("cyan", "water", "muddy","red"));
+        tempListAnswer.addAll(Arrays.asList("red", "cyan"));
+        Question cq2 = new CheckboxQuestion("Select colors among the list?", tempList, tempListAnswer);
         tempList.clear();
         tempListAnswer.clear();
 
-        tempList.add("24");
-        tempList.add("2");
-        tempList.add("57");
-        tempList.add("7");
-        tempListAnswer.add("7");
-        tempListAnswer.add("2");
-        CheckboxQuestion cq3 = new CheckboxQuestion("select prime numbers from the list?", tempList, tempListAnswer);
+        tempList.addAll(Arrays.asList("24", "2", "57","7"));
+        tempListAnswer.addAll(Arrays.asList("7", "2"));
+        Question cq3 = new CheckboxQuestion("select prime numbers from the list?", tempList, tempListAnswer);
         tempList.clear();
         tempListAnswer.clear();
 

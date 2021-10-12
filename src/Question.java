@@ -8,6 +8,7 @@ public abstract class Question {
     public String getQuestionString() {
         return questionString;
     }
+
     protected void setQuestionString(String questionString) {
         this.questionString = questionString;
     }
@@ -28,7 +29,7 @@ public abstract class Question {
         this.sublistOfCorrectAnswers = new ArrayList<>(sublistOfAnswers);
     }
 
-    public void printQuestion(){
+    public void printQuestion() {
         System.out.println("Question: " + questionString + "\n"
                 + "Possible answers: " + setOfPossibleAnswers);
     }
